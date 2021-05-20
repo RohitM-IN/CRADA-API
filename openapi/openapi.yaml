@@ -1,0 +1,142 @@
+openapi: 3.0.3
+info:
+  title: CRADA API
+  contact:
+    name: CRADA staff team
+    url: 'https://www.crada.ga/api'
+    email: contact@crada.ga
+  description: >-
+    <a target="_blank"
+    href="https://god.postman.co/run-collection/13642074-7fad3869-3032-45b7-bc83-e8213302b87e?action=collection%2Ffork&collection-url=entityId%3D13642074-7fad3869-3032-45b7-bc83-e8213302b87e%26entityType%3Dcollection">
+         <img alt="Qries" src="https://run.pstmn.io/button.svg" alt="run in Postman"
+         width=150" height="70">
+      </a>
+    # Introduction
+
+
+    CRADA is an initiative for common people to provide them with various
+
+    essential resources information in their city. A website through which
+    people
+
+    searching for vaccine, medication, vacant beds in hospitals, food
+    facilities,
+
+    plasma and blood donor etc. will be provided here.
+
+
+    To make developers job easier we are providing the API for the same.
+
+
+
+    # Authentication
+
+
+    The API uses Token System which is available when you login and goto profile
+    panel
+
+
+    | Security Scheme Type      | HTTP        |
+
+    | ------------------------- | ----------- |
+
+    | HTTP Authorization Scheme | bearer      |
+
+
+    # Rate limit
+
+
+    The API enforces rate-limits to protect our servers against malicious and/or
+    mistaken use.
+
+
+    As of now global limit of 60 requests per minute per IP address is in
+    effect.
+  version: '1.0'
+servers:
+  - url: 'https://www.crada.ga/api/v1'
+paths:
+  /ping:
+    $ref: paths\ping.yaml
+  /login:
+    $ref: paths\login.yaml
+  /register:
+    $ref: paths\register.yaml
+  /logout:
+    $ref: paths\logout.yaml
+  /country:
+    $ref: paths\country.yaml
+  /state:
+    $ref: paths\state.yaml
+  /city:
+    $ref: paths\city.yaml
+  /category:
+    $ref: paths\category.yaml
+  /sub-category:
+    $ref: paths\sub-category.yaml
+  /resource:
+    $ref: paths\resource.yaml
+  /create-resource:
+    $ref: paths\create-resource.yaml
+  /create-category:
+    $ref: paths\create-category.yaml
+  /create-sub-category:
+    $ref: paths\create-sub-category.yaml
+  /create-country:
+    $ref: paths\create-country.yaml
+  /create-state:
+    $ref: paths\create-state.yaml
+  /create-city:
+    $ref: paths\create-city.yaml
+tags:
+  - name: General
+    description: Some general API endpoints which are for tracking or keeping the API alive
+  - name: World Info
+    description: >-
+      Here you will be able to search the data of Country , State or City where
+      you can get id of the same and fetch further info to filter other data. If
+      you have admin role then use the API token in your profile to manipulate
+      the data of the same
+  - name: Categories
+  - name: Resources
+    description: >-
+      Here you will be able to fetch the data which is saved in DB or in
+      cache.The resource data is auto updated every 10 min using scrappers.
+
+
+      In order to update data using API you need to have access to API token
+      which can be found in profile page same goes for adding new data using
+      API.
+  - name: New requests
+    description: >-
+      Here you will be able to send a request to our server to add a new
+      resource where our bot will check if required indo is available and
+      satsifying.
+
+      Here all the API requests needs Authorization Token
+  - name: models
+    x-displayName: Models
+    description: |-
+      ## Login
+      <SchemaDefinition schemaRef="#/components/schemas/login" />
+
+      ## Register
+      <SchemaDefinition schemaRef="#/components/schemas/register" />
+
+      ## Country
+      <SchemaDefinition schemaRef="#/components/schemas/Country" />
+
+      ## State
+      <SchemaDefinition schemaRef="#/components/schemas/State" />
+
+      ## City
+      <SchemaDefinition schemaRef="#/components/schemas/City" />
+
+      ## Category
+      <SchemaDefinition schemaRef="#/components/schemas/category" />
+
+      ## Sub Category
+      <SchemaDefinition schemaRef="#/components/schemas/sub-category" />
+
+      ## Resources
+      <SchemaDefinition schemaRef="#/components/schemas/resource" />

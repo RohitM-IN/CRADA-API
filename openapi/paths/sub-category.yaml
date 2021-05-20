@@ -1,0 +1,54 @@
+get:
+  tags:
+    - Categories
+  summary: sub-category
+  description: >-
+    In this endpoint you will be able to fetch the Sub Category id and names
+    with the relation to the categories data.
+  operationId: sub-category
+  parameters:
+    - name: search
+      in: query
+      description: |-
+        {Optional}
+
+        Search by ID , Name OR Category ID
+      required: true
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: Accept
+      in: header
+      required: true
+      style: simple
+      schema:
+        type: string
+        enum:
+          - application/json
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\sub-category.yaml
+      headers:
+        Accept: application/json
+    '400':
+      description: null
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error-400.yaml
+      headers:
+        Accept: application/json
+    '500':
+      description: null
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error-500.yaml
+      headers:
+        Accept: application/json
+  deprecated: false

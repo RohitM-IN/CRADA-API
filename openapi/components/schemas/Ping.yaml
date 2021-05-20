@@ -1,0 +1,19 @@
+description: ''
+type: object
+title: Ping
+properties:
+  status:
+    type: string
+  status_code:
+    type: integer
+  deprecated:
+    type: boolean
+    enum:
+      - false
+  data:
+    type: object
+    properties:
+      response:
+        type: string
+        enum:
+          - Pong

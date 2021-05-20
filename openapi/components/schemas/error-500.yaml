@@ -1,0 +1,19 @@
+title: error-500
+type: object
+properties:
+  status:
+    type: string
+    enum:
+      - System Error
+  state_code:
+    type: integer
+    enum:
+      - 500
+  deprecated:
+    type: boolean
+    enum:
+      - false
+  error:
+    type: string
+    enum:
+      - Error Message

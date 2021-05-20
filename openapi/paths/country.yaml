@@ -1,0 +1,50 @@
+get:
+  tags:
+    - World Info
+  summary: country
+  description: >-
+    In this endpoint you will be able to fetch the country data without any
+    relation to the States data
+  operationId: country
+  parameters:
+    - name: Accept
+      in: header
+      required: true
+      style: simple
+      schema:
+        type: string
+        enum:
+          - application/json
+    - name: search
+      in: path
+      required: false
+      style: simple
+      Schema:
+        type: string
+        example: India
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Country.yaml
+      headers:
+        Accept: application/json
+    '400':
+      description: null
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error-400.yaml
+      headers:
+        Accept: application/json
+    '500':
+      description: null
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error-500.yaml
+      headers:
+        Accept: application/json
+  deprecated: false

@@ -1,0 +1,40 @@
+post:
+  tags:
+    - New requests
+  summary: Create new category
+  operationId: request/new/category
+  parameters:
+    - name: Accept
+      in: header
+      required: true
+      style: simple
+      schema:
+        type: string
+        enum:
+          - application/json
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\category.yaml
+      headers:
+        Accept: application/json
+    '400':
+      description: null
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error-400.yaml
+      headers:
+        Accept: application/json
+    '500':
+      description: null
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error-500.yaml
+      headers:
+        Accept: application/json
+  deprecated: false

@@ -1,0 +1,17 @@
+title: error-400
+type: object
+properties:
+  status:
+    type: string
+    enum:
+      - Bad Request
+  state_code:
+    type: integer
+    enum:
+      - 400
+  deprecated:
+    type: boolean
+    enum:
+      - false
+  error:
+    type: object

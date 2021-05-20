@@ -1,0 +1,19 @@
+title: login
+type: object
+properties:
+  status:
+    type: string
+    enum:
+      - Success
+  state_code:
+    type: integer
+    enum:
+      - 200
+  deprecated:
+    type: boolean
+    enum:
+      - false
+  message:
+    type: string
+  data:
+    $ref: .\token.yaml

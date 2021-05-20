@@ -1,0 +1,58 @@
+post:
+  tags:
+    - General
+  summary: logout
+  description: >-
+    Using this endpoint you can delete the token so that you can regenerate
+    later when you login again.
+  operationId: auth/logout
+  parameters:
+    - name: Accept
+      in: header
+      required: true
+      style: simple
+      schema:
+        type: string
+        enum:
+          - application/json
+    - name: name
+      in: path
+      description: name of the user
+      required: true
+      type: string
+    - name: email
+      in: path
+      description: Email id of the user
+      required: true
+      type: string
+    - name: password
+      in: path
+      description: Super Secret password of the user
+      required: true
+      type: string
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\register.yaml
+      headers:
+        Accept: application/json
+    '400':
+      description: null
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error-400.yaml
+      headers:
+        Accept: application/json
+    '500':
+      description: null
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error-500.yaml
+      headers:
+        Accept: application/json
+  deprecated: false

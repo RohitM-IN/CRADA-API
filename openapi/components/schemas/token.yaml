@@ -1,0 +1,13 @@
+title: token
+type: object
+required:
+  - name
+  - email
+  - password
+properties:
+  token:
+    type: string
+  token_type:
+    type: string
+    enum:
+      - Bearer

@@ -1,0 +1,61 @@
+description: null
+type: object
+title: sub-category
+properties:
+  status:
+    type: string
+  status_code:
+    type: integer
+  deprecated:
+    type: boolean
+    enum:
+      - false
+  meta:
+    type: object
+    properties:
+      current_page:
+        type: integer
+      data:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          extra:
+            type: string
+          created_at:
+            type: string
+          updated_at:
+            type: string
+          category_id:
+            type: integer
+          category:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+  first_page_url:
+    type: string
+  from:
+    type: integer
+  last_page:
+    type: integer
+  last_page_url:
+    type: string
+  links:
+    $ref: .\Links.yaml
+  next_page_url:
+    type: string
+  path:
+    type: string
+  per_page:
+    type: integer
+  prev_page_url:
+    type: string
+  to:
+    type: integer
+  total:
+    type: integer

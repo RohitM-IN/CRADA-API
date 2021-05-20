@@ -1,0 +1,8 @@
+type: object
+properties:
+  url:
+    type: string
+  label:
+    type: string
+  active:
+    type: boolean
